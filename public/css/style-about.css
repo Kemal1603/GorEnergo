@@ -1,0 +1,94 @@
+#block-about {
+  height: 100vh;
+}
+
+#block-about .back-picture {
+  padding-top: 20px;
+}
+
+#block-about .back-picture img {
+  max-height: 500px;
+}
+
+#block-about .text-about {
+  padding: 102px 0;
+}
+
+#block-about .text-about h1 {
+  font-weight: bold;
+  font-size: 36px;
+  color: #000000;
+}
+
+#block-about .text-about .space-hr {
+  padding-left: 250px;
+}
+
+#block-about .text-about .space-hr hr {
+  height: 2px;
+  background: #271C36;
+  width: 100px;
+  margin: 0;
+}
+
+#block-about .text-about p {
+  color: #000000;
+  font-size: 22px;
+  padding-top: 30px;
+}
+
+#block-about .text-about p span {
+  color: #271C36;
+}
+
+#block-text-service {
+  padding: 40px 0;
+  background: #E1E2DA;
+}
+
+#block-text-service h3 {
+  font-weight: bold;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  font-size: 34px;
+  color: #000000;
+}
+
+#block-text-service ul li {
+  color: #271C36;
+  list-style: square;
+  font-size: 18px;
+}
+
+#block-text-service ul li span {
+  color: #000000;
+}
+
+#block-text-service .style-button {
+  padding-top: 15px;
+}
+
+#block-text-service .style-button button {
+  border: 1px solid #271C36;
+  border-radius: 100px;
+  font-size: 18px;
+  color: #271C36;
+  padding: 10px 30px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#block-text-service .style-button button a {
+  color: #271C36;
+  text-decoration: none;
+  opacity: 1;
+}
+
+#block-text-service .style-button button a:hover {
+  color: #271C36;
+  opacity: 1;
+  border-bottom: 1px solid #271C36;
+  padding-bottom: 2px;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
