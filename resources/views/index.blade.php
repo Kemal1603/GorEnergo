@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Горэнерго</title>
 
-    <meta name="yandex-verification" content="133634068ccfbb03" />
+    <meta name="yandex-verification" content="133634068ccfbb03"/>
 
     <!--Favicon-->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -27,18 +27,20 @@
 
     <!-- Meta -->
     <!-- Page Description Here -->
-    <meta name="title" content="Горэнерго" />
+    <meta name="title" content="Горэнерго"/>
     <meta name="keywords" content="Горэнерго"/>
     <meta name="description" content="Ремонт и техническое обслуживание электрооборудования"/>
     <!-- Disable screen scaling-->
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0">
 
 
     <!-- Fonts-->
-    <link href="http://allfont.ru/allfont.css?fonts=sansation-light" rel="stylesheet" type="text/css" />
+    <link href="http://allfont.ru/allfont.css?fonts=sansation-light" rel="stylesheet" type="text/css"/>
 
     <!-- Подключаем значки -->
-    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -121,7 +123,8 @@
 
                 <div class="space-top effect-button-white">
                     <button type="button" class="btn" data-toggle="modal"
-                            data-target="#exampleModalCenter">ОБРАТНЫЙ ЗВОНОК</button>
+                            data-target="#exampleModalCenter">ОБРАТНЫЙ ЗВОНОК
+                    </button>
                 </div>
 
             </div>
@@ -153,7 +156,9 @@
 
 
                 <div class="space-top effect-button-transparent">
-                    <a href="about.html"><button type="button" class="btn">Подробнее</button></a>
+                    <a href="about.html">
+                        <button type="button" class="btn">Подробнее</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -183,7 +188,8 @@
                     <a href="/service/{{ $service->slug}}" target="_blank">
                         <h5>{{$service->title}}</h5>
                         <div class="image-service">
-                            <img src="/storage/services_img_sm/{{$service->img}}" alt="{{$service->title}}" class="img-fluid">
+                            <img src="/storage/services_img_sm/{{$service->img}}" alt="{{$service->title}}"
+                                 class="img-fluid">
                         </div>
                         <div class="space-top effect-button-purple">
                             <button type="button" class="btn ">Подробнее</button>
@@ -202,7 +208,8 @@
                             <a href="/service/{{ $service->slug}}" target="_blank">
                                 <h5>{{$service->title}}</h5>
                                 <div class="image-service">
-                                    <img src="/storage/services_img_sm/{{$service->img}}" alt="{{$service->title}}" class="img-fluid">
+                                    <img src="/storage/services_img_sm/{{$service->img}}" alt="{{$service->title}}"
+                                         class="img-fluid">
                                 </div>
                                 <div class="space-top effect-button-purple">
                                     <button type="button" class="btn ">Подробнее</button>
@@ -235,34 +242,34 @@
         <!--Блок слайдер-->
 
 
-
         <div class="block-slider">
-
 
 
             <div class="my_slider">
 
 
                 @foreach($products as $product )
-                        <div class="sl_item text-center">
-                            <a href="/product/{{ $product->slug}}" target="_blank">
-                                <div class="type-products text-center">
+                    <div class="sl_item text-center">
+                        <a href="/product/{{ $product->slug}}" target="_blank">
+                            <div class="type-products text-center">
 
-                                        <h5>{{$product->title}}</h5>
-                                        <div class="image-product">
-                                            <img src="/storage/products_img_sm/{{$product->img}}" alt="{{$product->title}}" class="img-fluid"></a>
-                                        </div>
-                                        <div class="space-buttom effect-button-purple">
-                                            <button type="button" class="btn">Подробнее</button>
-                                        </div>
+                                <h5>{{$product->title}}</h5>
+                                <div class="image-product">
+                                    <img src="/storage/products_img_sm/{{$product->img}}" alt="{{$product->title}}"
+                                         class="img-fluid">
                                 </div>
-                            </a>
+                                <div class="space-buttom effect-button-purple">
+                                    <button type="button" class="btn">Подробнее</button>
+                                </div>
                             </div>
-
+                        </a>
                     </div>
+                @endforeach
 
-                </div>
-        @endforeach
+            </div>
+
+        </div>
+
         <!--Блок слайдер - end-->
     </div>
 </section>
@@ -272,7 +279,7 @@
 <section id="block-lizing">
     <div class="row no-gutters">
         <div class="col-lg-4 text-center m-auto">
-            <img src="img/back/lizing.png" alt="Горэнерго"  class="img-fluid">
+            <img src="img/back/lizing.png" alt="Горэнерго" class="img-fluid">
         </div>
 
         <div class="col-lg-8 text-about-lizing m-auto">
@@ -292,7 +299,9 @@
                 </p>
 
                 <div class="space-top effect-button-purple">
-                    <a href="http://enl.by/"><button type="button" class="btn">Оформить</button></a>
+                    <a href="http://enl.by/">
+                        <button type="button" class="btn">Оформить</button>
+                    </a>
                 </div>
             </div>
 
@@ -334,13 +343,14 @@
                 <div class="col-md-6 col-12">
                     <div class="form-group">
                         <label for="message">Сообщение *</label>
-                        <textarea id="message" name="message" class="form-control-line form-control-white message" required></textarea>
+                        <textarea id="message" name="message" class="form-control-line form-control-white message"
+                                  required></textarea>
                     </div>
                 </div>
             </div>
 
             <div class="space-top effect-button-purple text-left">
-                <button type="submit" class="btn" >Спросить</button>
+                <button type="submit" class="btn">Спросить</button>
             </div>
         </form>
     </div>
@@ -374,9 +384,6 @@
 </footer>
 
 
-
-
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
@@ -393,7 +400,7 @@
                     <div class="form-input">
 
                         <div class="form-group">
-                            <input name="name"  class="form-control-line" type="text" placeholder="Имя" required >
+                            <input name="name" class="form-control-line" type="text" placeholder="Имя" required>
                         </div>
 
                         <div class="form-group">
@@ -407,14 +414,15 @@
                         </div>
 
                         <div class="form-group">
-                            <textarea  name="message" type="text" placeholder="Ваше сообщение для нас" class="message"></textarea>
+                            <textarea name="message" type="text" placeholder="Ваше сообщение для нас"
+                                      class="message"></textarea>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer m-auto">
                 <button type="button" class="btn" data-dismiss="modal">Закрыть</button>
-                <button type="submit" class="btn" >Отправить</button>
+                <button type="submit" class="btn">Отправить</button>
             </div>
         </div>
     </div>
@@ -436,7 +444,7 @@
                     <div class="form-input">
 
                         <div class="form-group">
-                            <input name="name"  class="form-control-line" type="text" placeholder="имя">
+                            <input name="name" class="form-control-line" type="text" placeholder="имя">
                         </div>
 
                         <div class="form-group">
@@ -451,14 +459,15 @@
                         </div>
 
                         <div class="form-group">
-                            <textarea  name="message" type="text" placeholder="Ваше сообщение для нас" class="message"></textarea>
+                            <textarea name="message" type="text" placeholder="Ваше сообщение для нас"
+                                      class="message"></textarea>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal">Закрыть</button>
-                <button type="submit" class="btn" >Отправить</button>
+                <button type="submit" class="btn">Отправить</button>
             </div>
         </div>
     </div>
@@ -509,11 +518,14 @@
 <script src="/js/main.js"></script>
 
 
-
 <!-- Javascript for modal -->
-<script src="/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="/js/popper.min.js"            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="/js/bootstrap.min.js"         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="/js/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="/js/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>
