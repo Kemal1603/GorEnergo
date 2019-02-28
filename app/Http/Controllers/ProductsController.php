@@ -3,135 +3,100 @@
 namespace App\Http\Controllers;
 
 use App\Products;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
-class ProductsController extends Controller
-{
-    public function index()
-    {
+class productsController extends Controller {
+	public function create() {
+		return view('products/create');
 
-        $products = Products::all();
+	}
 
-        return view('products/products')->with('products', $products);
-    }
+	public function store() {
+		request()->validate(['title' => ['required', 'min:3', 'max:50'],
 
-    public function create()
-    {
-        return view('products/create');
+				'description' => ['required', 'min:3', 'max:2000'], 'image' => '']);
 
-    }
+		$data = request()->all();
 
+		$data += ['slug' => str_slug($data['title'])];
 
-    public function store()
-    {
+		if (!empty(request()->file('image_file'))) {
+			$image = Input::file('image_file');
 
-        request()->validate(['title' => ['required', 'min:3', 'max:50'], 'description' => ['required', 'min:3', 'max:2000'], 'image' => '']);
+			$filename = str_random(32).'.'.$image->getClientOriginalExtension();
 
+			$path = storage_path('app/public/products_img_sm/'.$filename);
 
+			Image::make($image)->fit(250, 250)->save($path);
 
+			$path = storage_path('app/public/products_img/'.$filename);
 
-        $data = request()->all();
+			Image::make($image)->fit(1000, 600)->save($path);
 
-        $data += ['slug' => str_slug($data['title'])];
+			$data += ['img' => basename($filename)];
+		}
 
-        if (!empty(request()->file('image_file'))) {
-            $image = Input::file('image_file');
+		products::create($data);
 
-            $filename = str_random(32) . '.' . $image->getClientOriginalExtension();
+		return redirect('/admin/products');
+	}
 
-            $path = storage_path('app/public/products_img_sm/' . $filename);
-            Image::make($image)->fit(250, 250)->save($path);
+	public function edit(products $product) {
 
-            $path = storage_path('app/public/products_img/' . $filename);
-            Image::make($image)->fit(1000, 600)->save($path);
+		return view('/products/edit')->with('product', $product);
+	}
 
-            $data += ['img' => basename($filename)];
+	public function update(products $product) {
 
-        }
+		$data = request()->all();
 
-        Products::create($data);
+		$data += ['slug' => str_slug($data['title'])];
 
+		if (!empty(request()->file('image_file'))) {
+			Storage::delete('/public/products_img/'.$product->image);
 
-        return redirect('/products/products');
-    }
+			$image = Input::file('image_file');
 
+			$filename = str_random(32).'.'.$image->getClientOriginalExtension();
 
-    public function edit(Products $product_id)
-    {
+			$path = storage_path('app/public/products_img_sm/'.$filename);
 
+			Image::make($image)->fit(250, 250)->save($path);
 
-        return view('/products/edit')->with('edit_product', $product_id);
-    }
+			$path = storage_path('app/public/products_img/'.$filename);
 
+			Image::make($image)->fit(1000, 600)->save($path);
 
+			$data += ['img' => basename($filename)];
+		}
 
-    public function update(Products $edited_product)
-    {
-        $data = request()->all();
+		$product->update($data);
 
+		return redirect('/admin/products');
+	}
 
-        if (!empty(request()->file('image_file'))) {
+	public function delete(products $product) {
+		Storage::delete('/public/products_img/'.$product->img);
 
-            Storage::delete('/public/products_img/' . $edited_product->image);
+		Storage::delete('/public/products_img_sm/'.$product->img);
 
-            $image = Input::file('image_file');
+		$product->delete();
 
-            $filename = str_random(32) . '.' . $image->getClientOriginalExtension();
+		return redirect('/admin/products');
+	}
 
-            $path = storage_path('app/public/products_img_sm/' . $filename);
-            Image::make($image)->fit(250, 250)->save($path);
+	public function index() {
+		$products = products::all();
 
-            $path = storage_path('app/public/products_img/' . $filename);
-            Image::make($image)->fit(1000, 600)->save($path);
+		return view('/products/index')->with('products', $products);
 
-            $data += ['img' => basename($filename)];
+	}
 
-        }
+	public function show($slug) {
+		$product = products::where('slug', $slug)->first();
 
-        $edited_product->update($data);
-
-        return redirect('/products/products');
-    }
-
-
-
-
-    public function delete(Products $product_id)
-    {
-
-
-        Storage::delete('/public/products_img/' . $product_id->img);
-
-        Storage::delete('/public/products_img_sm/' . $product_id->img);
-
-        $product_id->delete();
-
-
-        return redirect('/products/products');
-    }
-
-
-    public function show()
-    {
-
-        $products = Products::all();
-
-
-        return view('/products/product')->with('products',$products );
-    }
-
-
-
-    public function about($slug, Products $product)
-    {
-
-
-        $products = Products::where('slug', $slug)->first();
-
-
-        return view('/products/about_product')->with('product',$product )->with('product',$products );
-    }
-
+		return view('/products/show')->with('products', $product);
+	}
 }

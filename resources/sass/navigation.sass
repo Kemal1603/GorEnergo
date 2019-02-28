@@ -1,0 +1,263 @@
+//Верхнее меню
+.navigation
+  background: #2C1E37
+  padding: 10px 0
+
+  img
+    max-height: 60px
+
+  .space-nav
+    padding-top: 15px
+
+  nav
+    padding-top: 25px
+    text-align: center
+
+    ul
+      margin: 0
+
+      li
+        display: inline-block
+        width: 100px
+        list-style-type: none
+        text-decoration: none
+        padding: 0 5px
+        text-align: center
+        a
+          color: #FFFFFF
+          text-decoration: none
+          opacity: 0.8
+          &:hover
+            color: #FFFFFF
+            opacity: 1
+            border-bottom: 1px solid #FFFFFF
+            padding-bottom: 5px
+            text-decoration: none
+            transition: 0.2s ease-in-out
+
+  .call
+    padding-right: 10px
+    padding-top: 15px
+
+    button
+      font-size: 14px
+      padding: 7px 10px
+
+  .contacts
+    padding-top: 15px
+
+    a
+      color: #FFFFFF
+      text-decoration: none
+      opacity: 0.8
+      &:hover
+        color: #FFFFFF
+        opacity: 1
+        border-bottom: 1px solid #FFFFFF
+        padding-bottom: 2px
+        text-decoration: none
+        transition: 0.2s ease-in-out
+
+.block_for_scroll
+  position: fixed
+  top: 0
+  height: 60px
+  width: 100%
+  background: transparent
+  //transition: all ease 0.2s
+
+  .block_for_scroll.active
+    background: #271C36
+
+@media (max-width: 450px)
+  .block_for_scroll
+    position: fixed
+    top: 0
+    height: 65px
+
+@media (max-width: 1250px)
+  .navigation
+    .contacts
+      a
+        font-size: 12px
+
+@media (max-width: 1059px)
+  .navigation
+
+    nav
+      padding-top: 10px
+
+    .contacts
+      padding-top: 10px
+
+
+@media (max-width: 990px)
+  .navigation
+    .contacts
+      a
+        font-size: 14px
+
+
+
+//Вложенное меню
+.navigation-for-small
+  top: 0
+  left: 0
+  width: 100%
+  position: absolute
+  z-index: 5
+  background: #2C1E37
+  padding: 10px 10px 10px 40px
+
+  .size-top
+    padding-top: 5px
+    padding-right: 50px
+
+    button
+      background: transparent
+      border: 1px solid #FFFFFF
+      z-index: 5
+
+      i
+        font-size: 40px
+
+@media (max-width: 990px)
+  .navigation-for-small
+    a
+      img
+        max-height: 60px
+
+    .size-top
+      i
+        font-size: 13px
+
+@media (max-width: 450px)
+  .navigation-for-small
+    a
+      img
+        max-height: 40px
+
+    .size-top
+      button
+        i
+          font-size: 20px
+
+
+
+//Navigation-index
+#main-block
+
+  //Navigation
+  .block_for_scroll
+    position: fixed
+    top: 0
+    height: 80px
+    width: 100%
+    z-index: 2
+    background: transparent
+    //transition: all ease 0.2s
+
+  .block_for_scroll.active
+    background: #271C36
+
+  .navigation-for-index
+    top: 0
+    padding: 10px
+    position: fixed
+    z-index: 5
+    width: 100%
+
+    img
+      max-height: 60px
+
+    .space-nav
+      padding-top: 15px
+    nav
+      padding-top: 20px
+      text-align: center
+      ul
+        margin: 0
+        li
+          display: inline-block
+          width: 100px
+          list-style-type: none
+          text-decoration: none
+          padding-left: 10px
+          padding-top: 15px
+          a
+            color: #FFFFFF
+            text-decoration: none
+            opacity: 0.7
+            &:hover
+              color: #FFFFFF
+              opacity: 1
+              border-bottom: 1px solid #FFFFFF
+              padding-bottom: 5px
+              text-decoration: none
+              transition: 0.2s ease-in-out
+    .contacts
+      padding-top: 10px
+      a
+        color: #FFFFFF
+        text-decoration: none
+        opacity: 0.7
+        &:hover
+          color: #FFFFFF
+          opacity: 1
+          border-bottom: 1px solid #FFFFFF
+          padding-bottom: 2px
+          text-decoration: none
+          transition: 0.2s ease-in-out
+
+.small-index
+  background: transparent
+
+
+
+@media (max-width: 1400px)
+  #main-block
+    .block_for_scroll
+      position: fixed
+      height: 75px
+
+
+    .navigation-for-index
+
+      nav
+        padding-top: 10px
+
+@media (max-width: 1330px)
+  #main-block
+    .block_for_scroll
+      position: fixed
+      height: 75px
+
+
+    .navigation-for-index
+
+      nav
+        padding-top: 10px
+
+
+@media (max-width: 1200px)
+  #main-block
+
+    .navigation-for-index
+
+      nav
+        ul
+          li
+            width: 90px
+            font-size: 13px
+            padding-left: 0
+            padding-top: 5px
+
+
+@media (max-width: 470px)
+  #main-block
+    .block_for_scroll
+      position: fixed
+      height: 65px
+
+
+

@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>О нас | Горэнерго</title>
+    <title>Услуги</title>
 
     <!--Favicon-->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -22,6 +22,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+
 
     <!-- Meta -->
     <!-- Page Description Here -->
@@ -45,7 +47,7 @@
 
 </head>
 <body>
-<header id="block-about">
+<header id="main-block-product">
 
     <div class="block_for_scroll">
         <div class="container-fluid">
@@ -77,10 +79,10 @@
 
                 <div class="col-lg-5">
                     <nav>
-                        <ul class="mb-0">
+                        <ul>
                             <li><a href="/service" target="_blank">Услуги</a></li>
                             <li><a href="/product" target="_blank">Продукция</a></li>
-                            <li><a href="about.html" target="_blank">О нас</a></li>s
+                            <li><a href="about.html" target="_blank">О нас</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -98,91 +100,100 @@
         </div>
     </div>
     <!--Верхнее меню - end-->
+
 </header>
 
-<section id="info-about">
-    <div class="row no-gutters">
-        <div class="col-md-6 col-12 back-picture text-center">
-            <!--<img src="img/back/about.png" alt="Горэнерго" class="img-fluid">-->
-        </div>
-        <div class="col-md-6 col-12 text-about">
-            <div class="main-container m-0 text-md-left text-center block-text">
-                <h1>
-                    О нас
-                </h1>
-                <hr class="space-hr text-md-left text-center">
-                <p>
-                    Команда профессионалов <span>ЗАО «Горэнерго»</span> более 15 лет производит ремонт, наладку,
-                    техническое
-                    обслуживание и модернизацию сложного электротехнического оборудования. Нашим коллективом
-                    успешно завершен целый ряд технически сложных проектов в области энергосбережения,
-                    автоматизации и модернизации.
-                </p>
+<!-- 1 блок Наша продукция-->
+<section id="block-product">
+    <div class="container-fluid">
 
-                <p class="m-0">Фактический адрес: 220045, Республика Беларусь, г. Минск, ул. Чюрлениса, д. 4, пом. 174</p>
-                <p class="m-0">Юридический адрес: 220012, Республика Беларусь, г. Минск, ул. Толбухина, д. 9А, пом. 96</p>
-            </div>
+        <div class="name-products text-center">
+            <h1>
+                Наши услуги
+            </h1>
+        </div>
+
+        <div class="row no-gutters">
+
+            @foreach($services as $service )
+
+                <div class="col-lg-4 product text-center">
+                    <a href="/service/{{ $service->slug}}" target="_blank">
+                        <h5>{{$service->title}}</h5>
+                        <div class="image-product">
+                            <img src="/storage/services_img_sm/{{$service->img}}" alt="{{$service->title}}"
+                                 class="img-fluid">
+                        </div>
+                        <div class="space-top effect-button-purple">
+                            <button type="button" class="btn">Подробнее</button>
+                        </div>
+                    </a>
+                </div>
+
+            @endforeach
+
+
+
         </div>
     </div>
-
-</section>
-
+</section></section>
 
 
-<!--Блок - услуги-->
-<section id="block-text-service">
-    <div class="container-fluid">
-        <div class="row no-gutters">
-            <div class="col-lg-9  m-auto">
-                <div class="main-container">
-                    <h3>
-                        Мы предоставляем следующие услуги:
-                    </h3>
-                    <ul>
-                        <li><span>модернизация электрической части станков и технологических линий;</span></li>
-                        <li><span>проектирование и внедрение АСУТП;</span></li>
-                        <li><span>пусконаладочные работы;</span></li>
-                        <li><span>разработка программного обеспечения;</span></li>
-                        <li><span>ремонт сложного электрооборудования;</span></li>
-                        <li><span>техническое обслуживание;</span></li>
-                        <li><span>установка электроприводов переменного тока;</span></li>
-                        <li><span>модернизация электроприводов постоянного тока;</span></li>
-                        <li><span>ремонт преобразователей частоты;</span></li>
-                        <li><span>диспетчерское управление и сбор данных (SCADA);</span></li>
-                        <li><span>поставка широкого ассортимента электротехнической продукции ведущих производителей:
-                            преобразователи частоты, электродвигатели, устройства плавного пуска, автоматика
-                            и многое другое.</span></li>
-                    </ul>
+
+
+<!-- Блок обратная связь-->
+<section id="block-questions-form">
+    <div class="main-block-questions">
+        <h2>ОСТАЛИСЬ ВОПРОСЫ?</h2>
+
+        <form class="form-container" method="post" action="/send_mail.php">
+            <div class="row no-gutters">
+                <div class="col-md-5 col-12">
+
+                    <div class="form-input">
+                        <div class="form-group">
+                            <label for="name">Ваше имя *</label>
+                            <input type="text" class="form-control" name="name" id="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form_phone">Ваш номер телефона *</label>
+                            <input type="number" class="form-control" name="phone" id="form_phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mail">Ваш e-mail *</label>
+                            <input type="text" class="form-control" name="mail" id="mail" required>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-1 d-none d-md-block"></div>
+                <div class="col-md-6 col-12">
+                    <div class="form-group">
+                        <label for="message">Сообщение *</label>
+                        <textarea id="message" name="message" class="form-control-line form-control-white message" required></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row no-gutters">
-
-            <div class="col-lg-3 col-sm-6 col-12 offset-lg-2  text-center style-button effect-button-transparent">
-                <a href="products.html"><button type="button" class="btn">Наша продукция</button></a>
+            <div class="space-top effect-button-purple text-left">
+                <button type="submit" class="btn" >Спросить</button>
             </div>
-            <div class="col-lg-4 col-sm-6 col-12 text-center style-button effect-button-transparent">
-                <a href="service.html"><button type="button" class="btn">Наши услуги</button></a>
-            </div>
-            <div class="col-lg-2 col-12 text-center style-button effect-button-transparent">
-                <a href="index.html#block-lizing"><button type="button" class="btn">Лизинг</button></a>
-            </div>
-
-        </div>
+        </form>
     </div>
 </section>
-
 
 <!--Меню-footer-->
 <footer id="block-footer">
     <div class="container-fluid">
         <div class="row no-gutters">
-            <div class="col-lg-3 col-12 text-center text-lg-left">
+            <div class="col-lg-3 text-center text-lg-left">
                 <a href="index.html"><img src="img/logo.png" alt="Горэнерго" class="img-fluid"></a>
             </div>
 
-            <div class="col-lg-6 col-12 text-center">
+            <div class="col-lg-6 text-center">
                 <nav>
                     <ul>
                         <li><a href="/service" target="_blank">Услуги</a></li>
@@ -192,7 +203,7 @@
                 </nav>
             </div>
 
-            <div class="col-lg-3 col-12 text-lg-right text-center contacts">
+            <div class="col-lg-3 text-lg-right text-center contacts">
                 <a href="tel:+375172355296" target="_blank">+375 (17) 235-52-96</a> <br>
                 <a href="mailto:info@gorenergo.by" target="_blank">info@gorenergo.by</a>
             </div>
@@ -254,7 +265,6 @@
                 <div class="col-lg-10 m-auto">
                     <a href="index.html"><img src="img/logo.png" alt="Горэнерго" class="img-fluid"></a>
                 </div>
-
             </div>
             <div class="modal-body">
                 <div class="row no-gutters">
@@ -290,6 +300,5 @@
 
 </body>
 </html>
-
 
 

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Горэнерго</title>
 
+    <meta name="yandex-verification" content="133634068ccfbb03" />
+
     <!--Favicon-->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -40,7 +42,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/app.css?v=1">
 
     <!-- Click -->
     <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
@@ -53,10 +55,10 @@
 
     <div class="block_for_scroll">
         <div class="container-fluid">
-            <div class="navigation-for-small d-block d-lg-none">
+            <div class="navigation-for-small small-index d-block d-lg-none">
                 <div class="row no-gutters">
                     <div class="col-xs-4 text-left">
-                        <a href="/"><img src="img/logo.png" alt="Горэнерго" class="img-fluid"></a>
+                        <a href="index.html"><img src="img/logo.png" alt="Горэнерго" class="img-fluid"></a>
                     </div>
                     <div class="col-xs-4">
                     </div>
@@ -75,19 +77,19 @@
 
 
     <!--Развернутое меню-->
-    <div class="container-fluid">
-        <div class="navigation-for-index d-none d-lg-block">
+    <div class="navigation-for-index d-none d-lg-block">
+        <div class="container-fluid">
             <div class="row no-gutters">
                 <div class="col-lg-3 text-center text-lg-left">
-                    <a href="/"><img src="img/logo.png" alt="Горэнерго" class="img-fluid"></a>
+                    <a href="index.html"><img src="img/logo.png" alt="Горэнерго" class="img-fluid"></a>
                 </div>
 
                 <div class="col-lg-6 text-center">
                     <nav>
                         <ul>
-                            <li><a href="/service" target="_blank">Услуги</a></li>
-                            <li><a href="/product" target="_blank">Товары</a></li>
-                            <li><a href="about.html" target="_blank">О компании</a></li>
+                            <li><a href="/services" target="_blank">Услуги</a></li>
+                            <li><a href="/product" target="_blank">Продукция</a></li>
+                            <li><a href="about.html" target="_blank">О нас</a></li>
                             <li><a href="#block-lizing">Лизинг</a></li>
                         </ul>
                     </nav>
@@ -95,7 +97,7 @@
 
                 <div class="col-lg-3 text-lg-right  text-center contacts">
                     <a href="tel:+375172355296" target="_blank">+375 (17) 235-52-96</a> <br>
-                    <a href="mailto:belgorenergo@mail.ru" target="_blank"> belgorenergo@mail.ru</a>
+                    <a href="mailto:info@gorenergo.by" target="_blank">info@gorenergo.by</a>
                 </div>
 
             </div>
@@ -104,8 +106,7 @@
 
     <div class="container-fluid">
         <div class="row no-gutters">
-            <div class="col-md-10 block-info">
-
+            <div class="col-md-12 col-xl-10 block-info">
 
                 <h1>
                     Ремонт и техническое обслуживание электрооборудования
@@ -135,17 +136,15 @@
 <section id="block-about-us">
     <div class="container-fluid">
         <div class="row no-gutters">
-            <div class="col-lg-8 text-about text-center m-auto">
+            <div class="col-lg-6 text-about text-center m-auto">
                 <h3>
                     О нас
                 </h3>
                 <p>
-                <ul>
-                    <li>  <span>Команда профессионалов  </span> ЗАО «Горэнерго» <span>  на протяжении многих лет <br>
-                производит оптимальный подбор и осуществляет поставку <br>
-                электрооборудования: </span></li> <br> <br>
-                </ul>
-                <span>— преобразователи частоты: <br>
+                    <span>Команда профессионалов  </span> ЗАО «Горэнерго» <span>  на протяжении многих лет
+                производит оптимальный подбор и осуществляет поставку
+                электрооборудования: </span></li> <br>
+                    <span>— преобразователи частоты: <br>
                     — приводы постоянного тока; <br>
                     — электродвигатели; <br>
                     — контроллеры; <br>
@@ -159,9 +158,9 @@
             </div>
         </div>
 
-        <div class="figure d-none d-lg-block">
-            <img src="img/icons/figure2.png" alt="Горэнерго" class="img-fluid">
-        </div>
+        <!--<div class="figure d-none d-lg-block">-->
+        <!--<img src="img/icons/figure2.png" alt="Горэнерго" class="img-fluid">-->
+        <!--</div>-->
     </div>
 </section>
 
@@ -180,22 +179,48 @@
 
             @foreach($services as $service )
 
-                <div class="col-lg-4 type-service text-center">
-                    <h5>{{$service->title}}</h5>
-                    <div class="image-service">
-                        <a href="#"><img src="/storage/services_img_sm/{{$service->img}}" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="space-top">
-                        <button type="button" class="btn btn-primary">
-                            <a href="/services/{{ $service->slug}}/{{$service->id}}/about" target="_blank">Подробнее</a></button>
-                    </div>
+                <div class="col-4 type-service text-center d-none d-md-block">
+                    <a href="/service/{{ $service->slug}}" target="_blank">
+                        <h5>{{$service->title}}</h5>
+                        <div class="image-service">
+                            <img src="/storage/services_img_sm/{{$service->img}}" alt="{{$service->title}}" class="img-fluid">
+                        </div>
+                        <div class="space-top effect-button-purple">
+                            <button type="button" class="btn ">Подробнее</button>
+                        </div>
+                    </a>
                 </div>
 
             @endforeach
 
+            <div class="row no-gutters d-block d-md-none">
+                <!--Блок слайдер-->
+                <div class="block-slider1">
+                    <div class="my_slider1">
+                        <div class="sl_item text-center">
+
+                            <a href="/service/{{ $service->slug}}" target="_blank">
+                                <h5>{{$service->title}}</h5>
+                                <div class="image-service">
+                                    <img src="/storage/services_img_sm/{{$service->img}}" alt="{{$service->title}}" class="img-fluid">
+                                </div>
+                                <div class="space-top effect-button-purple">
+                                    <button type="button" class="btn ">Подробнее</button>
+                                </div>
+                            </a>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!--Блок слайдер - end-->
         </div>
     </div>
+
 </section>
+
 
 <!-- 3 блок Наша продукция-->
 <section id="main-block-products">
@@ -208,25 +233,36 @@
         </div>
 
         <!--Блок слайдер-->
-        <div class="block-slider">
-            <div class="my_slider">
-                <div class="sl_item">
-                    <div class="type-products text-center">
-                        @foreach($products as $product )
-                            <h5>{{$product->title}}</h5>
-                            <div class="image-product">
-                                <a href="#"><img src="/storage/products_img_sm/{{$product->img}}" alt="" class="img-fluid"></a>
-                            </div>
-                            <div class="space-buttom">
-                                <button type="button" class="btn btn-primary ">
-                                    <a href="/products/{{ $product->slug}}/{{$product->id}}/about" target="_blank">Подробнее</a></button>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
 
-            </div>
-        </div>
+
+
+        <div class="block-slider">
+
+
+
+            <div class="my_slider">
+
+
+                @foreach($products as $product )
+                        <div class="sl_item text-center">
+                            <a href="/product/{{ $product->slug}}" target="_blank">
+                                <div class="type-products text-center">
+
+                                        <h5>{{$product->title}}</h5>
+                                        <div class="image-product">
+                                            <img src="/storage/products_img_sm/{{$product->img}}" alt="{{$product->title}}" class="img-fluid"></a>
+                                        </div>
+                                        <div class="space-buttom effect-button-purple">
+                                            <button type="button" class="btn">Подробнее</button>
+                                        </div>
+                                </div>
+                            </a>
+                            </div>
+
+                    </div>
+
+                </div>
+        @endforeach
         <!--Блок слайдер - end-->
     </div>
 </section>
@@ -235,13 +271,13 @@
 <!--Блок и лизинге-->
 <section id="block-lizing">
     <div class="row no-gutters">
-        <div class="col-lg-6 text-center">
+        <div class="col-lg-4 text-center m-auto">
             <img src="img/back/lizing.png" alt="Горэнерго"  class="img-fluid">
         </div>
 
-        <div class="col-lg-5 text-about-lizing">
+        <div class="col-lg-8 text-about-lizing m-auto">
 
-            <div class="main-container m-0 text-left">
+            <div class="main-container-lizing m-0 text-lg-left text-center">
                 <h3>
                     Лизинг
                 </h3>
@@ -256,7 +292,7 @@
                 </p>
 
                 <div class="space-top effect-button-purple">
-                    <a href="about.html"><button type="button" class="btn">Оформить</button></a>
+                    <a href="http://enl.by/"><button type="button" class="btn">Оформить</button></a>
                 </div>
             </div>
 
@@ -265,57 +301,48 @@
 
 </section>
 
+
 <!-- Блок обратная связь-->
+<section id="block-questions-form">
+    <div class="main-block-questions">
+        <h2>ОСТАЛИСЬ ВОПРОСЫ?</h2>
 
-<section id="block-questions">
-    <div class="container-fluid">
-        <div class="row no-gutters">
-            <div class="col-lg-12 text-questions text-center m-auto">
-                <div class="name-questions  text-center">
-                    <p>НЕ НАШЛИ, ЧТО ИСКАЛИ? <br>
-                        ГОТОВЫ ОТВЕТИТЬ НА ЛЮБОЙ ВАШ ВОПРОС.</p>
-                </div>
+        <form class="form-container" method="post" action="/send_mail.php">
+            <div class="row no-gutters">
+                <div class="col-md-5 col-12">
 
-                <div class="main_block-questions  text-center">
-                    <p>Оставьте Ваш номер телефона и наши специалисты ответят на них!</p>
-                </div>
-
-                <div class="form-questions  text-center">
-                    <form class="form-container" method="post" action="">
-
+                    <div class="form-input">
                         <div class="form-group">
-                            <div class="row no-gutters">
-                                <div class="col-lg-2">
-
-                                </div>
-                                <div class="col-lg-5 text-center btn-phone">
-                                    <input type="tel" id="phone_num" name="phone" class="form-control-line"
-                                           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                           required placeholder="+375-__-___-__-__">
-                                </div>
-
-                                <div class="col-lg-3 text-center effect-button-transparent">
-                                    <button type="submit" class="btn">Отправить</button>
-                                </div>
-                            </div>
+                            <label for="name">Ваше имя *</label>
+                            <input type="text" class="form-control" name="name" id="name" required>
                         </div>
 
-                    </form>
+                        <div class="form-group">
+                            <label for="form_phone">Ваш номер телефона *</label>
+                            <input type="number" class="form-control" name="phone" id="form_phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mail">Ваш e-mail *</label>
+                            <input type="text" class="form-control" name="mail" id="mail" required>
+                        </div>
+
+                    </div>
+
                 </div>
-
+                <div class="col-md-1 d-none d-md-block"></div>
+                <div class="col-md-6 col-12">
+                    <div class="form-group">
+                        <label for="message">Сообщение *</label>
+                        <textarea id="message" name="message" class="form-control-line form-control-white message" required></textarea>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="figure-inside d-none d-lg-block">
-            <img src="img/icons/figure2.png" alt="Горэнерго" class="img-fluid">
-        </div>
-
-        <div class="figure-outside1">
-            <img src="img/icons/figure1.png" alt="Горэнерго" class="img-fluid">
-        </div>
-        <div class="figure-outside2">
-            <img src="img/icons/figure3.png" alt="Горэнерго" class="img-fluid">
-        </div>
+            <div class="space-top effect-button-purple text-left">
+                <button type="submit" class="btn" >Спросить</button>
+            </div>
+        </form>
     </div>
 </section>
 
@@ -324,23 +351,23 @@
 <footer id="block-footer">
     <div class="container-fluid">
         <div class="row no-gutters">
-            <div class="col-lg-4 text-center text-lg-left">
-                <a href="/"><img src="img/logo.png" alt="Горэнерго" class="img-fluid"></a>
+            <div class="col-lg-3 text-center text-lg-left">
+                <a href="index.html"><img src="img/logo.png" alt="Горэнерго" class="img-fluid"></a>
             </div>
 
-            <div class="col-lg-4 text-center">
+            <div class="col-lg-6 text-center">
                 <nav>
                     <ul>
-                        <li><a href="service.html">Услуги</a></li>
-                        <li><a href="products.html">Продукция</a></li>
-                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="/service" target="_blank">Услуги</a></li>
+                        <li><a href="/product" target="_blank">Продукция</a></li>
+                        <li><a href="about.html" target="_blank">О нас</a></li>
                     </ul>
                 </nav>
             </div>
 
-            <div class="col-lg-4 text-lg-right text-center contacts">
+            <div class="col-lg-3 text-lg-right text-center contacts">
                 <a href="tel:+375172355296" target="_blank">+375 (17) 235-52-96</a> <br>
-                <a href="mailto:belgorenergo@mail.ru" target="_blank"> belgorenergo@mail.ru</a>
+                <a href="mailto:info@gorenergo.by" target="_blank">info@gorenergo.by</a>
             </div>
         </div>
     </div>
@@ -356,22 +383,27 @@
     <div class="modal-dialog " role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
-                <div class="col-lg-4 m-auto">
-                    <a href="/"><img src="img/logo.png" alt="Горэнерго" class="img-fluid"></a>
+                <div class="col-lg-10 m-auto">
+                    <a href="index.html"><img src="img/logo.png" alt="Горэнерго" class="img-fluid"></a>
                 </div>
             </div>
             <div class="modal-body">
-                <form class="send_email_form" method="post" action="">
+                <form class="send_email_form" method="post" action="/send_mail.php">
 
                     <div class="form-input">
 
                         <div class="form-group">
-                            <input name="name"  class="form-control-line" type="text" placeholder="имя">
+                            <input name="name"  class="form-control-line" type="text" placeholder="Имя" required >
                         </div>
 
                         <div class="form-group">
-                            <input type="tel" id="phone1" name="phone" class="form-control-line"
-                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="+375-__-___-__-__">
+                            <input type="number" id="phone1" name="phone" class="form-control-line"
+                                   required placeholder="+375-__-___-__-__">
+                        </div>
+
+                        <div class="form-group">
+                            <input name="email" class="form-control-line" type="email"
+                                   required placeholder="Ваш e-mail" data-validation-type="email"/>
                         </div>
 
                         <div class="form-group">
@@ -380,14 +412,13 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer m-auto">
                 <button type="button" class="btn" data-dismiss="modal">Закрыть</button>
-                <button type="button" class="btn" >Отправить</button>
+                <button type="submit" class="btn" >Отправить</button>
             </div>
         </div>
     </div>
 </div>
-
 
 <!-- Modal 1-->
 <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle1"
@@ -396,11 +427,11 @@
         <div class="modal-content">
             <div class="modal-header text-center">
                 <div class="col-lg-4 m-auto">
-                    <a href='/'><img src="img/logo.png" alt="Горэнерго" class="img-fluid"></a>
+                    <a href="index.html"><img src="img/logo.png" alt="Горэнерго" class="img-fluid"></a>
                 </div>
             </div>
             <div class="modal-body">
-                <form class="send_email_form" method="post" action="">
+                <form class="send_email_form" method="post" action="/send_mail.php">
 
                     <div class="form-input">
 
@@ -410,12 +441,13 @@
 
                         <div class="form-group">
                             <input name="email" class="form-control-line" type="email"
-                                   required placeholder="your@email.address" data-validation-type="email"/>
+                                   required placeholder="Ваш e-mail" data-validation-type="email"/>
                         </div>
 
                         <div class="form-group">
-                            <input type="tel" id="phone" name="phone" class="form-control-line"
-                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="+375-__-___-__-__">
+
+                            <input type="number" id="phone" name="phone" class="form-control-line"
+                                   required placeholder="+375-__-___-__-__">
                         </div>
 
                         <div class="form-group">
@@ -426,7 +458,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal">Закрыть</button>
-                <button type="button" class="btn" >Отправить</button>
+                <button type="submit" class="btn" >Отправить</button>
             </div>
         </div>
     </div>
@@ -440,7 +472,7 @@
     <div class="modal-dialog " role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
-                <div class="col-lg-4 m-auto">
+                <div class="col-lg-10 m-auto">
                     <a href="/"><img src="img/logo.png" alt="Горэнерго" class="img-fluid"></a>
                 </div>
             </div>
@@ -450,37 +482,38 @@
                         <nav>
                             <ul>
                                 <li><a href="/service" target="_blank">Услуги</a></li>
-                                <li><a href="/product" target="_blank">Товары</a></li>
-                                <li><a href="about.html" target="_blank">О компании</a></li>
+                                <li><a href="/product" target="_blank">Продукция</a></li>
+                                <li><a href="about.html" target="_blank">О нас</a></li>
                             </ul>
                         </nav>
 
                         <div class="col-lg-12 text-center contacts">
                             <a href="tel:+375172355296" target="_blank">+375 (17) 235-52-96</a> <br>
-                            <a href="mailto:belgorenergo@mail.ru" target="_blank"> belgorenergo@mail.ru</a>
+                            <a href="mailto:info@gorenergo.by" target="_blank">info@gorenergo.by</a>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer m-auto">
                     <button type="button" class="btn" data-dismiss="modal">Закрыть</button>
-                    <button type="button" class="btn" >Отправить</button>
+                    <!--<button type="button" class="btn" >Отправить</button>-->
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
-
-
-
-<script src="/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="/js/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
-<script src="/slick/slick.min.js"></script>
-<script src="/js/main.js"></script>
+<!--JS--><!--Slick-->
+<script src="/js/jquery.js"></script>
+<script type="/text/javascript" src="/slick/slick.min.js"></script>
 <script src="/js/slider.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+<!-- Javascript for modal -->
+<script src="/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="/js/popper.min.js"            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="/js/bootstrap.min.js"         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 </body>
 </html>

@@ -1,61 +1,159 @@
 #block-about
-    height: 100vh
+
+#info-about
     .back-picture
-      padding-top: 20px
-      img
-        max-height: 500px
+      background-image: url("../img/back/about.jpg")
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+      min-height: 450px
+
+      //img
+      //  max-height: 400px
+
     .text-about
-      padding: 102px 0
+      padding: 30px 0
+
+      .block-text
+        width: 70%
+        padding: 10px 10px
+
       h1
         font-weight: bold
         font-size: 36px
         color: #000000
+
       .space-hr
-        padding-left: 250px
-        hr
-          height: 2px
-          background: #271C36
-          width: 100px
-          margin: 0
+        height: 2px
+        background: #271C36
+        width: 100px
+
       p
         color: #000000
-        font-size: 22px
-        padding-top: 30px
+        font-size: 16px
+        padding-top: 15px
         span
           color: #271C36
 
+
+
+@media (max-width: 990px)
+  #info-about
+    .text-about
+      padding-top: 150px
+
+@media (max-width: 917px)
+  #info-about
+    .back-picture
+      margin-top: 50px
+
+@media (max-width: 800px)
+  #info-about
+
+    .text-about
+      padding-top: 50px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
+      .block-text
+        width: 70%
+
+        hr
+          margin: auto
+
+@media (max-width: 500px)
+  #info-about
+
+    .text-about
+      padding-top: 50px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
+      .block-text
+        width: 80%
+
 #block-text-service
-  padding: 40px 0
+  padding: 40px 5px
   background: #E1E2DA
+
+  .container-fluid
+    width: 50%
+
   h3
     font-weight: bold
-    padding-bottom: 15px
-    padding-top: 15px
+    padding: 15px 0
     font-size: 34px
     color: #000000
+
   ul li
     color: #271C36
     list-style: square
     font-size: 18px
+
     span
       color: #000000
+
   .style-button
     padding-top: 15px
+
+  .effect-button-transparent
+
     button
-      border: 1px solid #271C36
-      border-radius: 100px
-      font-size: 18px
-      color: #271C36
-      padding: 10px 30px
-      background-color: rgba(255, 255, 255, 0)
-      a
-        color: #271C36
-        text-decoration: none
-        opacity: 1
-        &:hover
-          color: #271C36
-          opacity: 1
-          border-bottom: 1px solid #271C36
-          padding-bottom: 2px
-          text-decoration: none
-          transition: 0.2s ease-in-out
+      padding: 7px 20px
+
+
+@media (max-width: 3000px)
+  #block-text-service
+
+    .container-fluid
+      width: 50%
+
+@media (max-width: 1440px)
+  #block-text-service
+
+    .container-fluid
+      width: 60%
+
+@media (max-width: 1300px)
+  #block-text-service
+
+    h3
+      font-size: 25px
+
+    .effect-button-transparent
+
+      button
+        padding: 10px 20px
+
+@media (max-width: 700px)
+  #info-about
+
+    .text-about
+
+      p
+        font-size: 16px
+
+  #block-text-service
+
+    h3
+      text-align: center
+
+    ul
+      padding-left: 20px
+      li
+       font-size: 14px
+
+
+@media (max-width: 600px)
+
+  #block-text-service
+    .container-fluid
+      width: 95%
+
+
+
+

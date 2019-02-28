@@ -2,6 +2,10 @@
   padding: 50px 0 0px 0;
 }
 
+#block-products a {
+  color: #000000;
+}
+
 #block-products .name-products h1 {
   font-weight: bold;
   padding-bottom: 30px;
@@ -15,32 +19,64 @@
 
 #block-products .product .image-product img {
   max-height: 200px;
+  border: 1px solid #b1b1b1;
 }
 
 #block-products .space-buttom {
   padding-bottom: 70px;
 }
 
-#block-products .space-buttom button {
-  border: 1px solid #271C36;
-  border-radius: 100px;
-  font-size: 16px;
-  color: #FFFFFF;
-  padding: 10px 30px;
-  background-color: #271C36;
-  text-transform: capitalize;
+@media (max-width: 1210px) {
+  #block-products {
+    padding-top: 50px;
+  }
+
+  #block-products .product .image-product {
+    padding: 20px 0;
+  }
+
+  #block-products .product .image-product img {
+    max-height: 150px;
+  }
 }
 
-#block-products .space-buttom button a {
-  color: #FFFFFF;
-  text-decoration: none;
+@media (max-width: 990px) {
+  #block-products {
+    padding-top: 150px;
+  }
+
+  #block-products .product .image-product {
+    padding: 20px 0;
+  }
+
+  #block-products .product .image-product img {
+    max-height: 120px;
+  }
 }
 
-#block-products .space-buttom button a:hover {
-  color: #FFFFFF;
-  border-bottom: 1px solid #FFFFFF;
-  padding-bottom: 2px;
-  text-decoration: none;
-  transition: 0.2s ease-in-out;
+@media (max-width: 790px) {
+  #block-products {
+    padding-top: 150px;
+  }
+
+  #block-products .product .image-product {
+    padding: 20px 0;
+  }
+
+  #block-products .product .image-product img {
+    max-height: 130px;
+  }
+}
+
+@media (max-width: 500px) {
+  #block-products {
+    padding-top: 20%;
+  }
+}
+
+@media (max-width: 400px) {
+  #block-products {
+    padding-top: 30%;
+  }
 }
 
